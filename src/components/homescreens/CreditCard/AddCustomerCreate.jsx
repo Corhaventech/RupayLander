@@ -4,7 +4,7 @@ import bgImg from "../../../assets/img/bg-gradient-linear-new.png";
 import DropDownPicker from 'react-native-dropdown-picker';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
-const AddCustomerCreate = () => {
+const AddCustomerCreate = ({navigation}) => {
 
 
     const [open, setOpen] = useState(false);
@@ -91,7 +91,7 @@ const AddCustomerCreate = () => {
                 </View>
 
                 <View style={{ paddingVertical: 15, }}>
-                    <Pressable style={styles.ContinusBtn} onPress={() => navigation.navigate("Upload Document")}>
+                    <Pressable style={styles.ContinusBtn}>
                         <Text style={{ color: '#fff', textAlign: 'center', fontSize: 16 }}>Continue</Text>
                     </Pressable>
                 </View>

@@ -158,11 +158,11 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 15,
+    paddingHorizontal: 8,
     paddingVertical: 5
   },
   TabButtonFont: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "500",
   },
   buttonContainer: {

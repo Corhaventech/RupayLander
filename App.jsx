@@ -43,6 +43,8 @@ import FASTag from './src/components/homescreens/FASTags/FASTag';
 import UpcomingServiceDetails from './src/components/homescreens/UpcomingServices/UpcomingServiceDetails';
 import UpcomingServicecard from './src/components/homescreens/UpcomingServices/UpcomingServicecard';
 import OfferCardAll from './src/components/homescreens/UPIScreens/OfferCardAll';
+import PaymentHistory from './src/components/homescreens/wallets/PaymentHistory';
+import CreditCardDetailApproved from './src/components/homescreens/Customers/CreditCardDetailApproved';
 
 
 // const Stack = createNativeStackNavigator();
@@ -337,6 +339,13 @@ const App =  (props) => {
         </Stack.Screen>
 
 
+        <Stack.Screen name="Credit Card Detail Approved" options={{ 
+          headerShown: true,
+          title:"Dizi"
+        }}>
+            {(props) => <CreditCardDetailApproved {...props} />}
+        </Stack.Screen>
+
         <Stack.Screen name="notification" options={{ 
           headerShown: true,
           title:"Notification"
@@ -433,6 +442,12 @@ const App =  (props) => {
           title:"Offer Card"
         }}>
             {(props) => <OfferCardAll {...props} />}
+        </Stack.Screen>
+        <Stack.Screen name="PaymentHistory" options={{ 
+          headerShown: true,
+          title:"Payment History"
+        }}>
+            {(props) => <PaymentHistory {...props} />}
         </Stack.Screen>
 
       </Stack.Navigator>

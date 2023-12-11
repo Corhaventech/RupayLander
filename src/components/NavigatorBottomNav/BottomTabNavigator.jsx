@@ -25,7 +25,7 @@ const BottomTabNavigator = (props) => {
                         let iconName;
                         if (route.name === "Homes") {
                             iconName = focused ? "home" : "home-outline";
-                        } else if (route.name === "Customer") {
+                        } else if (route.name === "Lead") {
                             iconName = focused ? "cart" : "cart-outline";
                         } else if (route.name === "Wallet") {
                             iconName = focused ? "wallet" : "wallet-outline";
@@ -52,12 +52,12 @@ const BottomTabNavigator = (props) => {
                         backgroundColor: "#fff",
                         height: 70,
                         paddingBottom: 15,
-                        borderTopColor: "#ddd", 
+                        borderTopColor: "#ddd",
                     },
 
                     headerShown: false,
                     headerShadowVisible: false,
-                    headerTitleStyle: { fontSize: 16, fontWeight:'500' },
+                    headerTitleStyle: { fontSize: 16, fontWeight: "500" },
                 })}
             >
                 <Tab.Screen
@@ -68,16 +68,16 @@ const BottomTabNavigator = (props) => {
                         headerTitle: false,
                         backTitle: null,
                         headerLeft: () => (
-                            <View style={{ left: 10, flexDirection:'row', gap:10, alignItems:'center' }}>
+                            <View style={{ left: 10, flexDirection: "row", gap: 10, alignItems: "center" }}>
                                 <View>
                                     <Pressable style={styles.userView} onPress={() => navigation.navigate("profile")}>
                                         <Image source={user} style={styles.userImage} />
                                     </Pressable>
                                 </View>
                                 <View>
-                                    <Text style={{color:'#3B3935', fontSize:16, fontWeight:'600'}}>Welcome Back 👋 </Text>
-                                    <Text style={{color:'#3B3935', fontSize:12, fontWeight:'400'}}>Nicky Johnson </Text>
-                                </View> 
+                                    <Text style={{ color: "#3B3935", fontSize: 16, fontWeight: "600" }}>Welcome Back 👋 </Text>
+                                    <Text style={{ color: "#3B3935", fontSize: 12, fontWeight: "400" }}>Nicky Johnson </Text>
+                                </View>
                             </View>
                         ),
                         headerRight: () => (
@@ -96,18 +96,20 @@ const BottomTabNavigator = (props) => {
                 </Tab.Screen>
 
                 <Tab.Screen
-                    name="Customer"
-                    options={{
+                    name="Lead"
+                    options={({ navigation }) => ({
                         title: "Lead",
                         // tabBarBadge: 1,
-                        headerShown: false,
+                        headerShown: true,
                         headerRight: () => (
-                            <View style={{ position: "relative", right: 15 }}>
-                                <TouchableOpacity>{/* <Feather name="search" style={{ fontSize: 20 }} color="#fff" /> */}</TouchableOpacity>
+                            <View style={{right: 15 }}>
+                                <Pressable style={styles.menubtn} onPress={() => navigation.navigate("notification")}>
+                                    <Ionicons name="notifications" size={25} color="#3B3935" />
+                                </Pressable>
                             </View>
                         ),
                         tabBarIcon: ({ color, size }) => <AntDesign name="customerservice" color={color} size={size} />,
-                    }}
+                    })}
                 >
                     {(props) => <Customer {...props} />}
                 </Tab.Screen>
@@ -118,8 +120,8 @@ const BottomTabNavigator = (props) => {
                         title: "Wallet",
                         headerShown: true,
                         headerRight: () => (
-                            <TouchableOpacity style={styles.cartIcons}>
-                                <Ionicons name="ellipsis-vertical-outline" style={{ fontSize: 25 }} color="#000" />
+                            <TouchableOpacity style={styles.cartIcons} onPress={() => navigation.navigate("notification")}>
+                                <Ionicons name="notifications" style={{ fontSize: 25 }} color="#000" />
                             </TouchableOpacity>
                         ),
                     }}
@@ -132,12 +134,11 @@ const BottomTabNavigator = (props) => {
                         title: "Offer",
                         headerShown: true,
                         headerRight: () => (
-                            <TouchableOpacity style={styles.cartIcons}>
+                            <TouchableOpacity style={styles.cartIcons} onPress={() => navigation.navigate("notification")}>
                                 <Ionicons name="notifications" style={{ fontSize: 25 }} color="#000" />
                             </TouchableOpacity>
                         ),
                         tabBarIcon: ({ color, size }) => <MaterialIcons name="local-offer" color={color} size={size} />,
-                        
                     }}
                 >
                     {(props) => <Offers {...props} />}
@@ -157,7 +158,6 @@ const BottomTabNavigator = (props) => {
                             </Pressable>
                         ),
                         tabBarIcon: ({ color, size }) => <MaterialIcons name="video-collection" color={color} size={size} />,
-
                     })}
                 >
                     {(props) => <Media {...props} />}
@@ -174,25 +174,25 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         resizeMode: "contain",
-        borderRadius:50,
-        borderWidth:1,
-        borderColor:'#C4C4C7'
+        borderRadius: 50,
+        borderWidth: 1,
+        borderColor: "#C4C4C7",
     },
     cartIcons: {
         right: 15,
-        width: 35,
-        height: 35,
-        borderRadius: 8,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 5,
-        },
-        shadowOpacity: 0.36,
-        shadowRadius: 6.68,
-        elevation: 11,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#fff",
+        // width: 35,
+        // height: 35,
+        // borderRadius: 8,
+        // shadowColor: "#000",
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 5,
+        // },
+        // shadowOpacity: 0.36,
+        // shadowRadius: 6.68,
+        // elevation: 11,
+        // alignItems: "center",
+        // justifyContent: "center",
+        // backgroundColor: "#fff",
     },
 });

@@ -55,7 +55,7 @@ const Profile = ({navigation}) => {
                         </View>
                         <View style={{paddingBottom:12}}> 
                             <Text style={styles.ProfilenemuText}>Wallet</Text>
-                            <Pressable style={[styles.DisplayList, styles.promenus]} onPress={() => navigation.navigate("")}>
+                            <Pressable style={[styles.DisplayList, styles.promenus]} onPress={() => navigation.navigate("Wallet")}>
                                 <View style={styles.DisplayList}>
                                     <Ionicons name="wallet" color="#fff" size={22} /> 
                                     <Text style={styles.subTextNemu}>Wallet</Text>
