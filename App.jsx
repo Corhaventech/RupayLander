@@ -2,6 +2,7 @@ import React from 'react'
 import 'react-native-gesture-handler';
 import { StatusBar, Easing, Pressable, StyleSheet, View, Text, Image  } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import doller from './src/assets/icons/dollers.png'
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createStackNavigator, TransitionSpecs, HeaderStyleInterpolators, CardStyleInterpolators } from "@react-navigation/stack";
@@ -45,6 +46,10 @@ import UpcomingServicecard from './src/components/homescreens/UpcomingServices/U
 import OfferCardAll from './src/components/homescreens/UPIScreens/OfferCardAll';
 import PaymentHistory from './src/components/homescreens/wallets/PaymentHistory';
 import CreditCardDetailApproved from './src/components/homescreens/Customers/CreditCardDetailApproved';
+import BrochuresList from './src/components/homescreens/Medias/BrochuresList';
+import MediaBrochuresShare from './src/components/homescreens/Medias/MediaBrochuresShare';
+import MediaSeeAllCard from './src/components/homescreens/Medias/MediaSeeAllCard';
+import ShortVideo from './src/components/homescreens/Medias/ShortVideo';
 
 
 // const Stack = createNativeStackNavigator();
@@ -449,6 +454,44 @@ const App =  (props) => {
         }}>
             {(props) => <PaymentHistory {...props} />}
         </Stack.Screen>
+        <Stack.Screen name="Brochures List" options={{ 
+          headerShown: true,
+          title:"Brochures"
+        }}>
+            {(props) => <BrochuresList {...props} />}
+        </Stack.Screen>
+        <Stack.Screen name="MediaSeeAllCard" options={{ 
+          headerShown: true,
+          title:"See All Card"
+        }}>
+            {(props) => <MediaSeeAllCard {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name="MediaBrochuresShare"
+        options={({ navigation }) => ({ 
+          headerShown: true,
+          headerRight: () => (
+              <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("")}>
+                  <Ionicons name="bookmark-outline" style={{ fontSize: 25 }} color="#000" /> 
+              </Pressable>
+          ),
+          title:"Media Share"
+        })}>
+            {(props) => <MediaBrochuresShare {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name="short video"
+        options={({ navigation }) => ({ 
+          headerShown: true,
+          headerRight: () => (
+              <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("")}>
+                  <Ionicons name="bookmark-outline" style={{ fontSize: 25 }} color="#000" /> 
+              </Pressable>
+          ),
+          title:"Short Video"
+        })}>
+            {(props) => <ShortVideo {...props} />}
+        </Stack.Screen>
 
       </Stack.Navigator>
     </NavigationContainer>
@@ -457,4 +500,8 @@ const App =  (props) => {
 
 export default App
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  cartIcons: {
+    right: 15,
+  }
+})

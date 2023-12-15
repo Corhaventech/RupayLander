@@ -36,7 +36,7 @@ const Wallet = ({ navigation }) => {
                         <Text style={styles.transferText}>Last transfer date: 08 Dec 2023</Text>
                     </View>
                 </View>
-                <View style={{marginTop:20, flex:1}}>
+                <View style={{marginTop:12, flex:1}}>
                     <View style={[styles.flexDirection, { justifyContent: "space-between", marginBottom:10 }]}>
                         <Text style={{ color: "#3B3935", fontSize: 16, fontWeight: "700", fontFamily: "Nexa Bold" }}>Payment history</Text>
                         <Pressable onPress={() => navigation.navigate("PaymentHistory")}>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.36,
         shadowRadius: 6.68,
-        elevation: 11,
+        elevation: 4,
     },
     flexDirection: {
         flexDirection: "row",

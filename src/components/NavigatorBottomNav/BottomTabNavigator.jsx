@@ -147,14 +147,11 @@ const BottomTabNavigator = (props) => {
                 <Tab.Screen
                     name="Media"
                     options={({ navigation }) => ({
-                        title: "Media",
-                        headerTitleStyle: {
-                            display: "none",
-                        },
+                        title: "Media", 
                         headerShown: true,
                         headerRight: () => (
-                            <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("setting profile")}>
-                                <Ionicons name="settings-outline" style={{ fontSize: 25 }} color="#000" />
+                            <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("")}>
+                                <Ionicons name="bookmark-outline" style={{ fontSize: 25 }} color="#000" />
                             </Pressable>
                         ),
                         tabBarIcon: ({ color, size }) => <MaterialIcons name="video-collection" color={color} size={size} />,
