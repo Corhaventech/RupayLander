@@ -20,6 +20,10 @@ const SellServicesMore = () => {
                     <Pressable style={[styles.proBgImage, styles.SellIconView]}
                     // onPress={() => navigation.navigate("notification")}
                     >
+                        <View style={styles.get4parsent}>
+                            <View style={styles.squreBox} />
+                            <Text style={{ color: '#fff', fontWeight: '500' }}>Get 4%</Text>
+                        </View>
                         <View>
                             <Image source={SellIcon} style={[styles.SellIconIMG]} />
                         </View>
@@ -28,6 +32,11 @@ const SellServicesMore = () => {
                         </View>
                     </Pressable>
                     <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("sell services")}>
+
+                        <View style={styles.get4parsent}>
+                            <View style={styles.squreBox} />
+                            <Text style={{ color: '#fff', fontWeight: '500' }}>₹400</Text>
+                        </View>
                         <View>
                             <Image source={SellIcon1} style={[styles.SellIconIMG]} />
                         </View>
@@ -36,6 +45,10 @@ const SellServicesMore = () => {
                         </View>
                     </Pressable>
                     <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("sell services")}>
+                        <View style={styles.get4parsent}>
+                            <View style={styles.squreBox}/>
+                            <Text style={{ color: '#fff', fontWeight: '500' }}>₹400</Text>
+                        </View>
                         <View>
                             <Image source={SellIcon2} style={[styles.SellIconIMG]} />
                         </View>
@@ -44,6 +57,10 @@ const SellServicesMore = () => {
                         </View>
                     </Pressable>
                     <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("sell services")}>
+                        <View style={styles.get4parsent}>
+                            <View style={styles.squreBox} />
+                            <Text style={{ color: '#fff', fontWeight: '500' }}>Get 4%</Text>
+                        </View>
                         <View>
                             <Image source={SellIcon3} style={[styles.SellIconIMG]} />
                         </View>
@@ -52,6 +69,10 @@ const SellServicesMore = () => {
                         </View>
                     </Pressable>
                     <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("sell services")}>
+                        <View style={styles.get4parsent}>
+                            <View style={styles.squreBox} />
+                            <Text style={{ color: '#fff', fontWeight: '500' }}>₹400</Text>
+                        </View>
                         <View>
                             <Image source={SellIcon4} style={[styles.SellIconIMG]} />
                         </View>
@@ -60,6 +81,10 @@ const SellServicesMore = () => {
                         </View>
                     </Pressable>
                     <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("sell services")}>
+                        <View style={styles.get4parsent}>
+                            <View style={styles.squreBox} />
+                            <Text style={{ color: '#fff', fontWeight: '500' }}>₹400</Text>
+                        </View>
                         <View>
                             <Image source={SellIcon5} style={[styles.SellIconIMG]} />
                         </View>
@@ -68,17 +93,16 @@ const SellServicesMore = () => {
                         </View>
                     </Pressable>
                     <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("sell services")}>
+                        <View style={styles.get4parsent}>
+                            <View style={styles.squreBox} />
+                            <Text style={{ color: '#fff', fontWeight: '500' }}>Get 4%</Text>
+                        </View>
                         <View>
                             <Image source={SellIcon6} style={[styles.SellIconIMG]} />
                         </View>
                         <View>
                             <Text style={[styles.subHeadingSale, { color: "#3B3935", fontWeight: "500", fontSize: 11 }]}>Fastag</Text>
                         </View>
-                    </Pressable>
-                    <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("sell services")}>
-                        <View>
-                            <Image source={SellIcon7} style={[styles.SellIconIMG]} />
-                        </View> 
                     </Pressable>
                 </View>
             </View>
@@ -94,8 +118,8 @@ const styles = StyleSheet.create({
         resizeMode: "repeat",
         paddingVertical: 15,
         paddingHorizontal: 10
-    }, 
-    SellServicesContainer: { 
+    },
+    SellServicesContainer: {
         flexDirection: "row",
         alignItems: "center",
         flexWrap: "wrap",
@@ -107,10 +131,19 @@ const styles = StyleSheet.create({
         paddingHorizontal: 5,
         borderRadius: 12,
         resizeMode: "contain",
-        width: 82,
-        height: 82,
+        width: '32%',
+        height: '32%',
         alignItems: "center",
         justifyContent: "center",
+        overflow: 'hidden',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.36,
+        shadowRadius: 6.68,
+        elevation: 1, 
     },
     SellIconView: {
         borderWidth: 1,
@@ -119,7 +152,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    
+
     SellIconIMG: {
         width: 30,
         height: 30,
@@ -140,4 +173,35 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontFamily: "Nexa Bold",
     },
+    get4parsent: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex:10,
+        backgroundColor: '#33CC66',
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.36,
+        shadowRadius: 6.68,
+        elevation: 5,  
+    },
+    squreBox:{
+        position: 'absolute',
+        top: 11,
+        zIndex:0,
+        bottom:0,
+        backgroundColor: '#33CC66',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width:15,
+        height:15,
+        transform: [{rotate: '45deg'}],
+         
+    }
 })

@@ -50,6 +50,8 @@ import BrochuresList from './src/components/homescreens/Medias/BrochuresList';
 import MediaBrochuresShare from './src/components/homescreens/Medias/MediaBrochuresShare';
 import MediaSeeAllCard from './src/components/homescreens/Medias/MediaSeeAllCard';
 import ShortVideo from './src/components/homescreens/Medias/ShortVideo';
+import SaveMedia from './src/components/homescreens/Medias/SaveMedia';
+import CityofRegistrationCar from './src/components/homescreens/MotorInsuranced/CityofRegistrationCar';
 
 
 // const Stack = createNativeStackNavigator();
@@ -379,6 +381,13 @@ const App =  (props) => {
             {(props) => <NewVehicle {...props} />}
         </Stack.Screen>
 
+        <Stack.Screen name="CityofRegistration" options={{ 
+          headerShown: true,
+          title:"City Of Registration"
+        }}>
+            {(props) => <CityofRegistrationCar {...props} />}
+        </Stack.Screen>
+
         <Stack.Screen name="profile" options={{ 
           headerShown: true,
           title:"Your Profile"
@@ -471,7 +480,7 @@ const App =  (props) => {
         options={({ navigation }) => ({ 
           headerShown: true,
           headerRight: () => (
-              <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("")}>
+              <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("save media")}>
                   <Ionicons name="bookmark-outline" style={{ fontSize: 25 }} color="#000" /> 
               </Pressable>
           ),
@@ -482,15 +491,23 @@ const App =  (props) => {
 
         <Stack.Screen name="short video"
         options={({ navigation }) => ({ 
-          headerShown: true,
+          headerShown: false,
           headerRight: () => (
-              <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("")}>
+              <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("save media")}>
                   <Ionicons name="bookmark-outline" style={{ fontSize: 25 }} color="#000" /> 
               </Pressable>
           ),
           title:"Short Video"
         })}>
             {(props) => <ShortVideo {...props} />}
+        </Stack.Screen>
+
+        <Stack.Screen name="save media"
+        options={({ navigation }) => ({ 
+          headerShown: true, 
+          title:"Save Media"
+        })}>
+            {(props) => <SaveMedia {...props} />}
         </Stack.Screen>
 
       </Stack.Navigator>

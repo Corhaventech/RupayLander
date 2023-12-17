@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, ImageBackground, TextInput, Pressable, ScrollView, Modal, Image } from "react-native";
+import { StyleSheet, Text, View, ImageBackground, TextInput, Pressable, ScrollView, Modal, Image, TouchableOpacity } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import bgImg from "../../../assets/img/bg-gradient-linear-new.png";
@@ -14,8 +14,9 @@ import carlogo7 from '../../../assets/ManufacturerIcons/renault.png'
 import carlogo8 from '../../../assets/ManufacturerIcons/suzuki.png'
 import { SearchBar } from "@rneui/themed";
 
+import { Calendar, LocaleConfig } from 'react-native-calendars';
 
-const NewVehicle = () => {
+const NewVehicle = ({navigation}) => {
 
     const manufacturers = [
         {
@@ -92,6 +93,9 @@ const NewVehicle = () => {
       setSearch(search);
     };
 
+    
+  const [selected, setSelected] = useState('');
+
     return (
         <ImageBackground source={bgImg} style={styles.backggroundContainer}>
             <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
@@ -124,6 +128,11 @@ const NewVehicle = () => {
                         <Feather name="chevron-down" size={22} color="#12121D4D" />
                     </Pressable>
                 </View> 
+                <View style={{ paddingBottom: 5 }}>
+                    <Text style={{ fontWeight: "500", fontSize: 13, color: "#141516" }}>Year of Registration</Text>
+                    <TextInput keyboardType="default" placeholder="01/04/2017" placeholderTextColor="#12121D4D" style={styles.inputNumber} />
+                </View> 
+               
                  
                 {/* Manufacturer Modal*/}
                 <View style={styles.centeredView}>
@@ -285,9 +294,17 @@ const NewVehicle = () => {
                                         </View>
                                     </View>
                                     <View style={{paddingVertical:15}}>
-                                        <Pressable>
-                                            <Text style={{textAlign:'center', fontSize:16}}>See All</Text>
-                                        </Pressable>
+                                        <View style={{marginBottom:15}}>
+                                            <Text style={{textAlign:'center', fontSize:16, color:'#3B3935', fontWeight:'500'}}>IS your vehicle registred underBharat Series (BH-Series)? </Text>
+                                        </View>
+                                        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+                                            <TouchableOpacity style={styles.BtnSeries}>
+                                                <Text style={{color:'#fff', fontWeight:'500', fontSize:16}}>Yes</Text>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={[styles.BtnSeries, {backgroundColor:'#3B3935'}]}>
+                                                <Text style={{color:'#fff', fontWeight:'500', fontSize:16}}>No</Text>
+                                            </TouchableOpacity>
+                                        </View>
                                     </View>
                                 </View> 
                             </View>
@@ -297,7 +314,7 @@ const NewVehicle = () => {
             </ScrollView>
 
             <View style={{ paddingTop: 15 }}>
-                <Pressable style={styles.sendOTPContainer} onPress={() => navigation.navigate("")}>
+                <Pressable style={styles.sendOTPContainer} onPress={() => navigation.navigate("CityofRegistration")}>
                     <Text style={{ color: "#fff", fontSize: 17, fontWeight: "600" }}>Submit</Text>
                 </Pressable>
             </View>
@@ -336,6 +353,14 @@ const styles = StyleSheet.create({
         textAlign: "center",
         alignItems: "center",
         borderRadius: 100,
+    },
+    BtnSeries:{
+        width:'48%',
+        backgroundColor:'#F89D28',
+        height:40,
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:12
     },
     // Modal Css
 

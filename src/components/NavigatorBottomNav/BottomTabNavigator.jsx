@@ -150,7 +150,7 @@ const BottomTabNavigator = (props) => {
                         title: "Media", 
                         headerShown: true,
                         headerRight: () => (
-                            <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("")}>
+                            <Pressable style={styles.cartIcons} onPress={() => navigation.navigate("save media")}>
                                 <Ionicons name="bookmark-outline" style={{ fontSize: 25 }} color="#000" />
                             </Pressable>
                         ),

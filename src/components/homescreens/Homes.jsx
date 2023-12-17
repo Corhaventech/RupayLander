@@ -30,11 +30,11 @@ import OfferCard from "./UPIScreens/OfferCard";
 import dataup from '../data/UpcomingServiceData'
 
 // sell Services a component
- 
 
 
 
-const Homes = ({navigation}) => {
+
+const Homes = ({ navigation }) => {
     return (
         <ImageBackground source={bgImg} style={styles.backggroundContainer}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -123,7 +123,7 @@ const Homes = ({navigation}) => {
                             <View style={styles.SellHeading}>
                                 <Text style={{ color: "#3B3935", fontSize: 20, fontWeight: "700", fontFamily: "Nexa Bold" }}>Sell Services</Text>
                             </View>
-                            <View style={styles.SellServicesContainer}> 
+                            <View style={styles.SellServicesContainer}>
                                 <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("credit card")}>
                                     <View>
                                         <Image source={SellIcon} style={[styles.SellIconIMG]} />
@@ -131,17 +131,17 @@ const Homes = ({navigation}) => {
                                     <View>
                                         <Text style={[styles.subHeadingSale, { color: "#3B3935", fontWeight: "500", fontSize: 11 }]}>Create Card</Text>
                                     </View>
-                                </Pressable> 
+                                </Pressable>
                                 <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("personal loan")}>
                                     <View>
                                         <Image source={SellIcon1} style={[styles.SellIconIMG]} />
                                     </View>
                                     <View>
                                         <Text style={[styles.subHeadingSale, { color: "#3B3935", fontWeight: "500", fontSize: 11 }]}>
-                                        Personal Loan
+                                            Personal Loan
                                         </Text>
                                     </View>
-                                </Pressable> 
+                                </Pressable>
                                 <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("Home loan")}>
                                     <View>
                                         <Image source={SellIcon2} style={[styles.SellIconIMG]} />
@@ -151,7 +151,7 @@ const Homes = ({navigation}) => {
                                             Home Loan
                                         </Text>
                                     </View>
-                                </Pressable> 
+                                </Pressable>
                                 <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("business loan")}>
                                     <View>
                                         <Image source={SellIcon3} style={[styles.SellIconIMG]} />
@@ -161,7 +161,7 @@ const Homes = ({navigation}) => {
                                             Business Loan
                                         </Text>
                                     </View>
-                                </Pressable> 
+                                </Pressable>
                                 <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("car loan")}>
                                     <View>
                                         <Image source={SellIcon4} style={[styles.SellIconIMG]} />
@@ -171,7 +171,7 @@ const Homes = ({navigation}) => {
                                             Car Loan
                                         </Text>
                                     </View>
-                                </Pressable> 
+                                </Pressable>
                                 <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("motorinsurance")}>
                                     <View>
                                         <Image source={SellIcon5} style={[styles.SellIconIMG]} />
@@ -181,7 +181,7 @@ const Homes = ({navigation}) => {
                                             Motor Insurance
                                         </Text>
                                     </View>
-                                </Pressable> 
+                                </Pressable>
                                 <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("FASTags")}>
                                     <View>
                                         <Image source={SellIcon6} style={[styles.SellIconIMG]} />
@@ -191,12 +191,12 @@ const Homes = ({navigation}) => {
                                             Fastag
                                         </Text>
                                     </View>
-                                </Pressable> 
+                                </Pressable>
                                 <Pressable style={[styles.proBgImage, styles.SellIconView]} onPress={() => navigation.navigate("sell services")}>
                                     <View>
                                         <Image source={SellIcon7} style={[styles.SellIconIMG]} />
-                                    </View> 
-                                </Pressable> 
+                                    </View>
+                                </Pressable>
                             </View>
                         </View>
 
@@ -206,13 +206,13 @@ const Homes = ({navigation}) => {
                             <View style={styles.UpcomingHeading}>
                                 <Text style={{ color: "#3B3935", fontSize: 20, fontWeight: "700", fontFamily: "Nexa Bold" }}>Upcoming Services</Text>
                                 <Pressable onPress={() => navigation.navigate("Upcoming Service card")}>
-                                    <Text style={{color:'#F89D28', fontWeight:'500'}}>See All</Text>
+                                    <Text style={{ color: '#F89D28', fontWeight: '500' }}>See All</Text>
                                 </Pressable>
                             </View>
-                            <View style={{paddingVertical:15}}>
-                                <FlatList 
+                            <View style={{ paddingVertical: 15 }}>
+                                <FlatList
                                     data={dataup}
-                                    renderItem={({item}) => <UpcomingServices navigation={navigation} item={item} />}
+                                    renderItem={({ item }) => <UpcomingServices navigation={navigation} item={item} />}
                                     horizontal
                                     showsHorizontalScrollIndicator={false}
                                 />
@@ -225,23 +225,23 @@ const Homes = ({navigation}) => {
                             <View style={styles.UpcomingHeading}>
                                 <Text style={{ color: "#3B3935", fontSize: 20, fontWeight: "700", fontFamily: "Nexa Bold" }}>Offer</Text>
                                 <Pressable onPress={() => navigation.navigate("OfferCardAll")}>
-                                    <Text style={{color:'#F89D28', fontWeight:'500'}}>See All</Text>
+                                    <Text style={{ color: '#F89D28', fontWeight: '500' }}>See All</Text>
                                 </Pressable>
                             </View>
                             <View>
-                            <FlatList 
+                                <FlatList
                                     data={dataup}
-                                    renderItem={({item}) => <OfferCard navigation={navigation} item={item} />}
+                                    renderItem={({ item }) => <OfferCard navigation={navigation} item={item} />}
                                     horizontal
                                     showsHorizontalScrollIndicator={false}
-                                /> 
+                                />
                             </View>
                         </View>
                     </View>
                 </View>
             </ScrollView>
-            <View style={{position:'absolute', bottom:10, right:10}}>
-                <Pressable style={styles.circleAddIcons}>
+            <View style={{ position: 'absolute', bottom: 10, right: 10 }}>
+                <Pressable style={styles.circleAddIcons} onPress={() => navigation.navigate("sell services")}>
                     <Ionicons name="add-circle-outline" style={{ fontSize: 35 }} color="#fff" />
                 </Pressable>
             </View>
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     backggroundContainer: {
         flex: 1,
         resizeMode: "repeat",
-        position:'relative'
+        position: 'relative'
     },
     container: {
         width: "100%",
@@ -336,19 +336,19 @@ const styles = StyleSheet.create({
     },
     UpcomingContainer: {},
     UpcomingHeading: {
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'space-between'
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
-    circleAddIcons:{
-        backgroundColor:'#F89D28',
-        borderRadius:50,
-        width:40,
-        height:40,
-        alignItems:'center',
-        justifyContent:'center',
-        borderWidth:1,
-        borderColor:'#F0EDED'
+    circleAddIcons: {
+        backgroundColor: '#F89D28',
+        borderRadius: 50,
+        width: 40,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: '#F0EDED'
     }
 });
 
